@@ -14,6 +14,7 @@
 
     <label>Operator:</label>
     <select name="operator">
+        <option value="">chọn</option>
         <option value="+">+</option>
         <option value="-">-</option>
         <option value="*">×</option>

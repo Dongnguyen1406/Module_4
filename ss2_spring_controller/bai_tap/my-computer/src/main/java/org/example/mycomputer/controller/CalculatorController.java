@@ -20,15 +20,19 @@ public class CalculatorController {
     }
 
     @PostMapping("/calculate")
-    public String calculate(@RequestParam double number1,
-                            @RequestParam double number2,
+    public String calculate(@RequestParam String number1,
+                            @RequestParam String number2,
                             @RequestParam String operator,
                             Model model) {
         try {
             double result = calculatorService.calculate(number1, number2, operator);
             model.addAttribute("result", result);
-        } catch (Exception e) {
-            model.addAttribute("error", e.getMessage());
+        } catch (NumberFormatException e) {
+            model.addAttribute("error", "Vui lòng nhập số!");
+        } catch (IllegalArgumentException e) {
+            model.addAttribute("error", "Vui lòng chọn toán tử để tính!");
+        } catch (ArithmeticException e){
+            model.addAttribute("error", "Không thể chia cho 0!");
         }
         return "result";
     }

@@ -6,19 +6,26 @@ import org.springframework.stereotype.Service;
 @Service
 public class CalculatorService implements ICalculatorService {
     @Override
-    public double calculate(double first, double second, String operator) throws ArithmeticException {
-        switch (operator) {
-            case "+":
-                return first + second;
-            case "-":
-                return first - second;
-            case "*":
-                return first * second;
-            case "/":
-                if (second == 0) throw new ArithmeticException("Cannot divide by zero");
-                return first / second;
-            default:
-                throw new IllegalArgumentException("Invalid operator");
+    public double calculate(String firstNumberStr, String secondNumberStr, String operator) throws ArithmeticException {
+        try {
+            double firstNumber = Double.parseDouble(firstNumberStr);
+            double secondNumber = Double.parseDouble(secondNumberStr);
+            
+            switch (operator) {
+                case "+":
+                    return firstNumber + secondNumber;
+                case "-":
+                    return firstNumber - secondNumber;
+                case "*":
+                    return firstNumber * secondNumber;
+                case "/":
+                    if (secondNumber == 0) throw new ArithmeticException("Cannot divide by zero");
+                    return firstNumber / secondNumber;
+                default:
+                    throw new IllegalArgumentException("Invalid operator");
+            }
+        }catch (NumberFormatException e){
+            throw new NumberFormatException();
         }
     }
 }
