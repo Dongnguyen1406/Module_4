@@ -11,11 +11,11 @@
     <form action="/convert" method="post" class="mt-4">
         <div class="mb-3">
             <label>Tỉ giá (VNĐ/USD):</label>
-            <input type="number" step="0.01" name="rate" class="form-control" required>
+            <input type="text" step="0.01" name="rate" class="form-control" required>
         </div>
         <div class="mb-3">
             <label>Số USD cần đổi:</label>
-            <input type="number" step="0.01" name="usd" class="form-control" required>
+            <input type="text" step="0.01" name="usd" class="form-control" required>
         </div>
         <button type="submit" class="btn btn-primary">Chuyển đổi</button>
     </form>

@@ -13,17 +13,7 @@
 </head>
 <body>
 <h2>Kết quả:</h2>
-
-<c:choose>
-    <c:when test="${not empty result}">
-        <p><strong>Từ:</strong> ${word}</p>
-        <p><strong>Nghĩa:</strong> ${result}</p>
-    </c:when>
-    <c:otherwise>
-        <p>Không tìm thấy từ "<strong>${word}</strong>" trong từ điển.</p>
-    </c:otherwise>
-</c:choose>
-
-<a href="/">← Quay lại</a>
+<p><strong>${word}</strong> → <span style="color: blue">${result}</span></p>
+<a href="/">Quay lại</a>
 </body>
 </html>
