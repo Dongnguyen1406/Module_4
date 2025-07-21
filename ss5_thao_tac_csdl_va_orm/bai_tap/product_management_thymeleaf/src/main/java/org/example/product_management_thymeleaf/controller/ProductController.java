@@ -3,6 +3,7 @@ package org.example.product_management_thymeleaf.controller;
 import org.example.product_management_thymeleaf.model.Product;
 import org.example.product_management_thymeleaf.service.IProductService;
 import org.example.product_management_thymeleaf.service.ProductService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,7 +18,8 @@ import java.util.List;
 @RequestMapping("/products")
 public class ProductController {
 
-    private static final IProductService productService = new ProductService();
+    @Autowired
+    private IProductService productService;
 
     @GetMapping("")
     public String index(Model model) {
