@@ -10,6 +10,6 @@ import java.util.Optional;
 public interface IBlogService {
     List<Blog> findAll();
     Blog findById(Integer id);
-    Blog save(Blog blog);
+    void save(Blog blog);
     void delete(Integer id);
 }

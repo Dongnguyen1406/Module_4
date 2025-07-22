@@ -23,11 +23,13 @@ public class BlogService implements IBlogService{
     public Blog findById(Integer id) {
         return blogRepository.findById(id).orElse(null);
     }
-    
+
     @Override
-    public Blog save(Blog blog) {
-        if (blog.getId() == null || findById(blog.getId()) == null){
+    public void save(Blog blog) {
+        if (blog.getId() == null || blogRepository.existsById(blog.getId())) {
             blogRepository.save(blog);
+        } else {
+            throw new IllegalArgumentException("không thể cập nhập với id " + blog.getId());
         }
     }
 
