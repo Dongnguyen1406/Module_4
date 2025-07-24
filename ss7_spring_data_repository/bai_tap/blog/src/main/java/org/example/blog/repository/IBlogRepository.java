@@ -11,13 +11,13 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface IBlogRepository extends JpaRepository<Blog, Integer> {
     Page<Blog> findByTitleContainingIgnoreCase(String keyword, Pageable pageable);
-
-    @Query("select b from Blog b where " +  // thêm dấu cách sau where
-            "(:keyword is null or lower(b.title) like lower(concat('%', :keyword, '%'))) and " +
-            "(:categoryId is null or b.category.idCategory = :categoryId)")
-        // bỏ dấu cách thừa
+    
+    @Query("SELECT b FROM Blog b WHERE (b.category.idCategory = :categoryId OR :categoryId = 0) AND (b.title LIKE CONCAT('%', :keyword, '%'))")
     Page<Blog> searchBlogs(@Param("keyword") String keyword,
-                           @Param("categoryId") Integer categoryId,
+                           @Param("categoryId") Integer idCategory,
                            Pageable pageable);
 
+//    @Query("SELECT b FROM Blog b WHERE b.isDeleted = false")
+//    Page<Blog> findAllNotDeleted(Pageable pageable);
 }
+

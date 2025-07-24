@@ -18,7 +18,7 @@
     </div>
     <div class="col-md-4">
         <select class="form-select" name="categoryId">
-<!--            <option th:value="" th:selected="${categoryId == null}">&#45;&#45; All Categories &#45;&#45;</option>-->
+            <option value="" th:selected="${categoryId == null or categoryId == ''}">-- All Categories --</option>
             <option th:each="cat : ${categorys}"
                     th:value="${cat.idCategory}"
                     th:text="${cat.nameCategory}"
@@ -75,14 +75,14 @@
 <nav aria-label="Page navigation example">
     <ul class="pagination">
         <li class="page-item" th:if="${blogs.hasPrevious()}">
-            <a class="page-link"
+            <a th:if="${keyword==null || categoryId==null}" class="page-link"
                th:href="@{/blogs(page=${blogs.number - 1}, keyword=${keyword}, categoryId=${categoryId})}"
                aria-label="Previous">
                 <span aria-hidden="true">&laquo;</span>
             </a>
         </li>
         <li class="page-item" th:if="${blogs.hasNext()}">
-            <a class="page-link"
+            <a th:if="${keyword==null || categoryId==null}" class="page-link"
                th:href="@{/blogs(page=${blogs.number + 1}, keyword=${keyword}, categoryId=${categoryId})}"
                aria-label="Next">
                 <span aria-hidden="true">&raquo;</span>

@@ -58,8 +58,9 @@ public class BlogService implements IBlogService {
     @Override
     public boolean delete(Integer id) {
         Blog blog = findById(id);
-        if (blog != null) {
-            blogRepository.deleteById(id);
+        if (blog != null && !blog.getIsDeleted()) {
+            blog.setIsDeleted(true);
+            blogRepository.save(blog); // Xóa mềm
             return true;
         }
         return false;

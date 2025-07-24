@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.Where;
 
 import java.time.LocalDate;
 
@@ -13,7 +14,8 @@ import java.time.LocalDate;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Blog {
+@Where(clause = "is_deleted = false")
+public class Blog extends Parent{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

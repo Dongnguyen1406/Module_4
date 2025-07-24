@@ -30,16 +30,21 @@ public class BlogController {
     public String index(Model model, @RequestParam(name = "page", defaultValue = "0") int page,
                         @RequestParam(name = "sort", defaultValue = "title") String sortField,
                         @RequestParam(name = "dir", defaultValue = "desc") String sortDir,
-                        @RequestParam(required = false) String keyword,
-                        @RequestParam(required = false) Integer categoryId) {
+                        @RequestParam(defaultValue = "") String keyword,
+                        @RequestParam(defaultValue = "") Integer categoryId) {
         int size = 2;
+        int searchId;
+        if (categoryId == null) {
+            searchId = 0;
+        } else {
+            searchId = categoryId;
+        }
         Sort sort = sortDir.equalsIgnoreCase("asc") ?
                 Sort.by(sortField).ascending() :
                 Sort.by(sortField).descending();
         PageRequest pageable = PageRequest.of(page, size, sort);
 
-        Page<Blog> blogPage = blogService.searchBlogs(keyword, categoryId, pageable);
-
+        Page<Blog> blogPage = blogService.searchBlogs(keyword, searchId, pageable);
         model.addAttribute("blogs", blogPage);
         model.addAttribute("keyword", keyword);
         model.addAttribute("categoryId", categoryId);
@@ -77,9 +82,14 @@ public class BlogController {
 
     @GetMapping("/edit/{id}")
     public String edit(@PathVariable Integer id, Model model) {
-        model.addAttribute("blog", blogService.findById(id));
-        model.addAttribute("categorys", categoryService.findAll());
-        return "update";
+        Blog blog = blogService.findById(id);
+        if (blog == null) {
+            return "redirect:/blogs";
+        } else {
+            model.addAttribute("blog", blog);
+            model.addAttribute("categorys", categoryService.findAll());
+            return "update";
+        }
     }
 
     @PostMapping("/update")
