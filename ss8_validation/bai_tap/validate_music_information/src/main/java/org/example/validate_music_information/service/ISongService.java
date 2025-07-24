@@ -11,5 +11,5 @@ public interface ISongService {
 
     Song findById(Integer id);
 
-    void edit(Song song, Integer id);
+    boolean edit(Song song);
 }

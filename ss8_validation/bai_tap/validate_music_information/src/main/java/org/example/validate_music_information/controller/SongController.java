@@ -9,10 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
@@ -46,7 +43,36 @@ public class SongController {
         redirect.addFlashAttribute("message", "create success!");
         return "redirect:/songs";
     }
-    
-    
-    
+
+    @GetMapping("/{id}/edit")
+    public String updateForm(@PathVariable Integer id, @ModelAttribute SongCreateDto songCreateDto, RedirectAttributes redirect, Model model) {
+        Song song = songService.findById(id);
+        if (song == null) {
+            redirect.addFlashAttribute("message", "not found!");
+            return "redirect:/songs";
+        }
+        BeanUtils.copyProperties(song, songCreateDto);
+        model.addAttribute("songCreateDto", songCreateDto);
+        model.addAttribute("id", id);
+        return "update";
+    }
+
+    @PostMapping("/{id}/edit")
+    public String update(@Validated @ModelAttribute SongCreateDto songCreateDto, BindingResult bindingResult,
+                         RedirectAttributes redirect, Model model, @PathVariable Integer id) {
+        if (bindingResult.hasErrors()) {
+            return "update";
+        }
+        if (songService.findById(id) == null) {
+            redirect.addFlashAttribute("message", "Not found!");
+            return "redirect:/songs";
+        }
+        Song song = new Song();
+        BeanUtils.copyProperties(songCreateDto, song);
+        song.setId(id);
+        songService.save(song);
+        model.addAttribute("song", song);
+        redirect.addFlashAttribute("message", "update successfully!");
+        return "redirect:/songs";
+    }
 }

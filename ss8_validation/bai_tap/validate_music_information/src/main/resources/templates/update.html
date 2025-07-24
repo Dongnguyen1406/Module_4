@@ -5,8 +5,8 @@
     <title>Title</title>
 </head>
 <body>
-<h2>Create New Song</h2>
-<form th:action="@{/songs/update}" th:object="${songCreateDto}" method="post">
+<h2>Edit Song</h2>
+<form th:action="@{'/songs/' + ${id} + '/edit'}" th:object="${songCreateDto}" method="post">
     <div class="mb-3">
         <label for="name" class="form-label">Name</label>
         <input type="text" th:field="*{name}" class="form-control" id="name" placeholder="Enter first name">

@@ -8,11 +8,11 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class SongService implements ISongService{
-    
+public class SongService implements ISongService {
+
     @Autowired
     private ISongRepository songRepository;
-    
+
     @Override
     public List<Song> findAll() {
         return songRepository.findAll();
@@ -20,16 +20,21 @@ public class SongService implements ISongService{
 
     @Override
     public void save(Song song) {
-        songRepository.save(song);
+            songRepository.save(song);
     }
 
     @Override
     public Song findById(Integer id) {
-        return null;
+        return songRepository.findById(id).orElse(null);
     }
 
     @Override
-    public void edit(Song song, Integer id) {
-
+    public boolean edit(Song song) {
+        if (findById(song.getId()) != null) {
+            song.setId(song.getId());
+            songRepository.save(song);
+            return true;
+        }
+        return false;
     }
 }
