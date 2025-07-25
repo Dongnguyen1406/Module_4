@@ -1,4 +1,4 @@
-package org.example.library_management.Aspect;
+package org.example.library_management.aspect;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.*;
