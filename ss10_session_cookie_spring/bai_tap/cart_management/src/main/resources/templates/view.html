@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table class="table table-bordered">
+  <thead>
+  <tr>
+    <th>Tên sản phẩm</th>
+    <th>Giá</th>
+    <th>Số lượng</th>
+    <th>Tổng</th>
+    <th>Hành động</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="item : ${cart.values()}">
+    <td th:text="${item.product.productName}"></td>
+    <td th:text="${item.product.price}"></td>
+    <td>
+      <form th:action="@{/cart/update}" method="post" class="form-inline">
+        <input type="hidden" name="productId" th:value="${item.product.productId}">
+        <input type="number" name="quantity" th:value="${item.quantity}" min="1" class="form-control">
+        <button class="btn btn-sm btn-warning ml-1">Cập nhật</button>
+      </form>
+    </td>
+    <td th:text="${item.total}"></td>
+    <td>
+      <form th:action="@{/cart/remove}" method="post">
+        <input type="hidden" name="productId" th:value="${item.product.productId}">
+        <button class="btn btn-sm btn-danger">Xóa</button>
+      </form>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<a th:href="@{/product}" class="btn btn-primary mt-3">Tiếp tục mua sắm</a>
+<div class="text-right">
+  <h4>Tổng cộng: <span th:text="${total}"></span> đ</h4>
+  <form th:action="@{/cart/checkout}" method="post">
+    <button class="btn btn-primary">Thanh toán</button>
+  </form>
+</div>
+</body>
+</html>

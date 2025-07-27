@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="row">
+    <div class="col-md-6">
+        <!-- card thông tin ưu đãi -->
+        <div class="card p-3">
+            <ul>
+                <li>Tặng banner, thiệp miễn phí</li>
+                <li>Giảm giá khi đặt hàng online</li>
+                <li>Giao hàng miễn phí toàn quốc</li>
+                <li>Giao gấp trong 2h</li>
+                <li>Cam kết hoa tươi trên 3 ngày</li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card p-3">
+            <h4 th:text="${product.productName}"></h4>
+            <p>Giá: <span th:text="${product.price}"></span> đ</p>
+            <form th:action="@{/cart/add}" method="post">
+                <input type="hidden" name="productId" th:value="${product.productId}">
+                <input type="number" name="quantity" value="1" min="1" class="form-control mb-2">
+                <button class="btn btn-success">Mua ngay</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
