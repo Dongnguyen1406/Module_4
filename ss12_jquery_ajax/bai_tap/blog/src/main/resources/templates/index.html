@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Blog List</title>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body class="container mt-4">
+
+<h2 class="mb-3">Blog List</h2>
+<a th:href="@{/blogs/new}" class="btn btn-primary mb-3">+ New Blog</a>
+<a th:href="@{/blogs/categorys}" class="btn btn-primary mb-3">Category Manager</a>
+
+<form class="row g-2 mb-3" th:action="@{/blogs}" method="get">
+    <div class="col-md-4">
+        <input type="text" class="form-control" name="keyword" placeholder="Search by title..."
+               th:value="${keyword}">
+    </div>
+    <div class="col-md-4">
+        <select class="form-select" name="categoryId">
+            <option value="" th:selected="${categoryId == null or categoryId == ''}">-- All Categories --</option>
+            <option th:each="cat : ${categorys}"
+                    th:value="${cat.idCategory}"
+                    th:text="${cat.nameCategory}"
+                    th:selected="${categoryId == cat.idCategory}">
+            </option>
+        </select>
+    </div>
+    <div class="col-md-2">
+        <button class="btn btn-outline-primary w-100" type="submit">Search</button>
+    </div>
+</form>
+
+
+<div class="alert alert-success" th:if="${message}" th:text="${message}"></div>
+<div class="alert alert-danger" th:if="${error}" th:text="${error}"></div>
+
+<table class="table table-bordered table-striped">
+    <thead class="table-dark">
+    <tr>
+        <th>STT</th>
+        <th>Title</th>
+        <th>Category</th>
+        <th>
+            <a th:href="@{/blogs(page=${blogs.number}, sort='title', dir=${sortField == 'title'} ? ${reverseDir} : 'asc')}">
+                CreateDate
+                <span th:if="${sortField == 'createDate'}">
+                <span th:if="${sortDir == 'asc'}">&#9650;</span> <i class="bi bi-arrow-up"></i>
+                <span th:if="${sortDir == 'desc'}">&#9660;</span> <i class="bi bi-arrow-down"></i>
+            </span>
+            </a>
+        </th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody id="blogTableBody">
+    <tr th:if="${blogs.content.isEmpty()}">
+        <td colspan="4" class="text-center text-muted">Không có dữ liệu</td>
+    </tr>
+    <tr th:each="blog, iterStat : ${blogs}">
+        <td th:text="${iterStat.count}">1</td>
+        <td th:text="${blog.title}">Title</td>
+        <td th:text="${blog.category.nameCategory}">Category</td>
+        <td th:text="${blog.createDate}">Title</td>
+        <td>
+            <a th:href="@{'/blogs/' + ${blog.id}}" class="btn btn-info btn-sm">View</a>
+            <a th:href="@{'/blogs/edit/' + ${blog.id}}" class="btn btn-warning btn-sm">Edit</a>
+            <a th:href="@{'/blogs/delete/' + ${blog.id}}"
+               class="btn btn-danger btn-sm"
+               onclick="return confirm('Delete this blog?')">Delete</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<div class="text-center mt-3">
+    <button id="loadMoreBtn" class="btn btn-outline-primary">Tải thêm</button>
+</div>
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+        <li class="page-item" th:if="${blogs.hasPrevious()}">
+            <a th:if="${keyword==null || categoryId==null}" class="page-link"
+               th:href="@{/blogs(page=${blogs.number - 1}, keyword=${keyword}, categoryId=${categoryId})}"
+               aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        <li class="page-item" th:if="${blogs.hasNext()}">
+            <a th:if="${keyword==null || categoryId==null}" class="page-link"
+               th:href="@{/blogs(page=${blogs.number + 1}, keyword=${keyword}, categoryId=${categoryId})}"
+               aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+</body>
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+        crossorigin="anonymous">
+
+</script>
+<script>
+    let currentPage = 1;
+    let sortField = 'createDate';  // hoặc 'title' tùy bạn
+    let sortDir = 'desc';
+    let keyword = /*[[${keyword}]]*/ '';  // Thymeleaf
+    let categoryId = /*[[${categoryId}]]*/ '';
+
+    document.getElementById('loadMoreBtn').addEventListener('click', function () {
+        fetch(`/api/blogs?page=${currentPage}&sort=${sortField}&dir=${sortDir}&keyword=${keyword}&categoryId=${categoryId}`)
+            .then(res => res.json())
+            .then(data => {
+                if (data.content.length === 0) {
+                    document.getElementById('loadMoreBtn').disabled = true;
+                    document.getElementById('loadMoreBtn').innerText = "Không còn bài viết nào";
+                    return;
+                }
+
+                const tbody = document.getElementById('blogTableBody');
+                data.content.forEach((blog, index) => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${tbody.rows.length + 1}</td>
+                        <td>${blog.title}</td>
+                        <td>${blog.category.nameCategory}</td>
+                        <td>${blog.createDate}</td>
+                        <td>
+                            <a href="/blogs/${blog.id}" class="btn btn-info btn-sm">View</a>
+                            <a href="/blogs/edit/${blog.id}" class="btn btn-warning btn-sm">Edit</a>
+                            <a href="/blogs/delete/${blog.id}" class="btn btn-danger btn-sm"
+                               onclick="return confirm('Delete this blog?')">Delete</a>
+                        </td>`;
+                    tbody.appendChild(row);
+                });
+
+                currentPage++;
+            })
+            .catch(err => console.error('Lỗi tải thêm:', err));
+    });
+</script>
+
+</html>
