@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="83ddba54-d743-4eee-a59d-05ad527152b0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../ss13_i18n/bai_tap/validate_form_dang_ky/src/main/resources/message.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss13_i18n/bai_tap/validate_form_dang_ky/src/main/resources/message.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss13_i18n/bai_tap/validate_form_dang_ky/src/main/resources/message_en.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss13_i18n/bai_tap/validate_form_dang_ky/src/main/resources/message_en.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss13_i18n/bai_tap/validate_form_dang_ky/src/main/resources/message_vi.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss13_i18n/bai_tap/validate_form_dang_ky/src/main/resources/message_vi.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3_views_thymeleaf/bai_tap/product_management_thymeleaf/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss3_views_thymeleaf/bai_tap/product_management_thymeleaf/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3_views_thymeleaf/bai_tap/product_management_thymeleaf/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss3_views_thymeleaf/bai_tap/product_management_thymeleaf/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3_views_thymeleaf/bai_tap/product_management_thymeleaf/src/main/java/org/example/product_management_thymeleaf/configuration/AppConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss3_views_thymeleaf/bai_tap/product_management_thymeleaf/src/main/java/org/example/product_management_thymeleaf/configuration/AppConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3_views_thymeleaf/bai_tap/product_management_thymeleaf/src/main/java/org/example/product_management_thymeleaf/configuration/AppInit.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss3_views_thymeleaf/bai_tap/product_management_thymeleaf/src/main/java/org/example/product_management_thymeleaf/configuration/AppInit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3_views_thymeleaf/bai_tap/product_management_thymeleaf/src/main/java/org/example/product_management_thymeleaf/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss3_views_thymeleaf/bai_tap/product_management_thymeleaf/src/main/java/org/example/product_management_thymeleaf/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3_views_thymeleaf/bai_tap/product_management_thymeleaf/src/main/java/org/example/product_management_thymeleaf/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss3_views_thymeleaf/bai_tap/product_management_thymeleaf/src/main/java/org/example/product_management_thymeleaf/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3_views_thymeleaf/bai_tap/product_management_thymeleaf/src/main/java/org/example/product_management_thymeleaf/repository/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss3_views_thymeleaf/bai_tap/product_management_thymeleaf/src/main/java/org/example/product_management_thymeleaf/repository/ProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3_views_thymeleaf/bai_tap/product_management_thymeleaf/src/main/webapp/WEB-INF/views/delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss3_views_thymeleaf/bai_tap/product_management_thymeleaf/src/main/webapp/WEB-INF/views/delete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3_views_thymeleaf/bai_tap/product_management_thymeleaf/src/main/webapp/WEB-INF/views/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss3_views_thymeleaf/bai_tap/product_management_thymeleaf/src/main/webapp/WEB-INF/views/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3_views_thymeleaf/bai_tap/product_management_thymeleaf/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss3_views_thymeleaf/bai_tap/product_management_thymeleaf/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/blog/src/main/java/org/example/blog/controller/BlogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/blog/src/main/java/org/example/blog/controller/BlogController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/blog/src/main/java/org/example/blog/entity/Blog.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/blog/src/main/java/org/example/blog/entity/Blog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/blog/src/main/java/org/example/blog/service/BlogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/blog/src/main/java/org/example/blog/service/BlogService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/blog/src/main/java/org/example/blog/service/IBlogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/blog/src/main/java/org/example/blog/service/IBlogService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/blog/src/main/resources/templates/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/blog/src/main/resources/templates/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/blog/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/blog/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/blog/src/main/resources/templates/update.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/blog/src/main/resources/templates/update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/blog/src/main/resources/templates/view.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/blog/src/main/resources/templates/view.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss7_spring_data_repository/bai_tap/blog/src/main/java/org/example/blog/exception_handler/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss7_spring_data_repository/bai_tap/blog/src/main/java/org/example/blog/exception_handler/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9_aop_exception_handeling/bai_tap/library_management/logs/application.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss9_aop_exception_handeling/bai_tap/library_management/logs/application.log" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="30dOSA1fVZ7Ogx4GHbxxfM35vHh" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Gradle.Build login_form_security.executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Spring Boot.LoginFormSecurityApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/CodeGym/Module_4/Module_4/ss14_web_security/bai_tap/login_form_security/src/main/resources/templates&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\CodeGym\Module_4\Module_4\ss14_web_security\bai_tap\login_form_security\src\main\resources\templates" />
+      <recent name="F:\CodeGym\Module_4\Module_4\ss14_web_security\bai_tap\login_form_security\src\main\java\org\example\login_form_security" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.example.login_form_security.config" />
+      <recent name="org.example.login_form_security.entity" />
+      <recent name="org.example.login_form_security.controller" />
+      <recent name="org.example.login_form_security.dto" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="LoginFormSecurityApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="login_form_security.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.login_form_security.LoginFormSecurityApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26053.27" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26053.27" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="83ddba54-d743-4eee-a59d-05ad527152b0" name="Changes" comment="" />
+      <created>1753953987638</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1753953987638</updated>
+      <workItem from="1753953988771" duration="2757000" />
+      <workItem from="1754004818792" duration="472000" />
+      <workItem from="1754009139265" duration="79000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

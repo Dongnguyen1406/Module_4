@@ -42,7 +42,7 @@ public class SecurityConfig {
 //                Config các đường dẫn không cần đăng nhập
                 .authorizeHttpRequests((authorizeHttpRequests) ->
                         authorizeHttpRequests
-                                .requestMatchers("/customer", "/login", "/logoutSuccessful").permitAll())
+                                .requestMatchers("/login", "/logoutSuccessful", "/loginSuccessful").permitAll())
 //                Config các đường dẫn bắt buộc cần đăng nhập
                 .authorizeHttpRequests((authorizeHttpRequests) ->
                         authorizeHttpRequests
@@ -55,7 +55,7 @@ public class SecurityConfig {
                                 .loginPage("/login")
                                 .failureUrl("/login?error=true")
                                 .loginProcessingUrl("/login")
-                                .defaultSuccessUrl("/customer"))
+                                .defaultSuccessUrl("/loginSuccessful"))
                 .logout((logout) ->
                         logout.deleteCookies("remove")
                                 .invalidateHttpSession(false)

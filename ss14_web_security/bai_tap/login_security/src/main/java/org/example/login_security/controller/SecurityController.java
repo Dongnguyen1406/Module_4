@@ -22,4 +22,11 @@ public class SecurityController {
         return "/logoutSuccessfulPage";
     }
 
+    @GetMapping(value = "/loginSuccessful")
+    public String loginSuccessfulPage(Model model) {
+
+        model.addAttribute("title", "Login");
+        return "/loginSuccessfulPage";
+    }
+
 }

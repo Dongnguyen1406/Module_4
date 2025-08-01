@@ -19,10 +19,10 @@ public class UserInforDetailService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         AppUser appUser = iUserRepository.findByUserName(username);
         if(appUser == null) {
+            System.out.println("Không tìm thấy user: " + username);
             throw new UsernameNotFoundException("User not found!");
         }
-//        Lấy tất cả role của AppUser
-        UserInfoUserDetails infoUserDetails = new UserInfoUserDetails(appUser);
-        return infoUserDetails;
+        System.out.println("Tìm thấy user: " + username + ", role: " + appUser.getAppRole().getRoleName());
+        return new UserInfoUserDetails(appUser);
     }
 }
